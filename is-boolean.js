@@ -1,7 +1,7 @@
 (function(root) {
 
   function isBoolean(v) {
-    return typeof v === 'boolean' || v instanceof Boolean;
+    return Object.prototype.toString.call(v) === '[object Boolean]';
   }
 
   if (typeof exports !== 'undefined') {
