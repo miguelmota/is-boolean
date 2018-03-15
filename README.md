@@ -8,10 +8,6 @@ Predicate that returns true for *boolean* values.
 npm install is-boolean
 ```
 
-```bash
-bower install is-boolean
-```
-
 # Usage
 
 ```javascript
