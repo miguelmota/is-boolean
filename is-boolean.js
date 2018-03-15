@@ -1,20 +1,24 @@
-(function(root) {
+;(function(root) {
 
   function isBoolean(v) {
-    return Object.prototype.toString.call(v) === '[object Boolean]';
+    if (Boolean.prototype.isPrototypeOf(v)) {
+      return true
+    }
+
+    return v === false || v === true
   }
 
   if (typeof exports !== 'undefined') {
     if (typeof module !== 'undefined' && module.exports) {
-      exports = module.exports = isBoolean;
+      exports = module.exports = isBoolean
     }
-    exports.isBoolean = isBoolean;
+    exports.isBoolean = isBoolean
   } else if (typeof define === 'function' && define.amd) {
     define([], function() {
-      return isBoolean;
-    });
+      return isBoolean
+    })
   } else {
-    root.isBoolean = isBoolean;
+    root.isBoolean = isBoolean
   }
 
 })(this);
